@@ -1,0 +1,62 @@
+
+
+    <!-- 输入框 -->
+    <view class="market-search-wrapper">
+        <view class="market-search-text">
+            <text class="market-search-text-text"></text>
+            <input class="market-search-text-input" disabled="isInputDisabled" placeholder-style="color: #cdcdcd" placeholder="搜索"
+            bindtap="goSearchPage"></input>
+        </view>
+    </view>
+    <view class="market-icon">
+        <!-- 轮播图 -->
+        <swiper class="market-swiper-wrapper" circular="{{autoplay}}" indicator-dots="{{indicator}}" autoplay="true" interval="{{interval}}"
+            duration="{{duration}}">
+            <block wx:for="{{pictureList}}" wx:key="{{index}}" wx:item="item">
+                <swiper-item class="market-swiper">
+                    <view class="market-swiper-item">
+                        <image class="market-swiper-img" src="{{item.imgUrl}}" />
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">山水画</view>
+                <view class="market-paint-more" data-category="山水画" data-type="shanshui" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{ssPaintList}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.imgUrl}}" />
+                    <view class="market-paint-name">{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">花鸟画</view>
+                <view class="market-paint-more" data-category="花鸟画" data-type="huaniao" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{hnPaintList}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.imgUrl}}" />
+                    <view class="market-paint-name">{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="market-paint">
+                <view class="market-paint-header">
+                    <view class="market-paint-text">人物画</view>
+                    <view class="market-paint-more" data-category="人物画" data-type="renwu" bindtap="goMorePaint">更多>></view>
+                </view>
+                <view class="market-paint-list">
+                    <view class="market-paint-item" wx:for="{{rwPaintList}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                        <image class="market-paint-img" src="{{item.imgUrl}}" />
+                        <view class="market-paint-name">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+    </view>

@@ -1,0 +1,19 @@
+<view class="main">
+
+    <view class="tab-content">
+        <view class="tab-content-paintType" wx:for="{{paintCategoryList}}" wx:key="{{index}}" wx:item="item" data-id="{{item.id}}" bindtap="goPaintDetail">
+            <view class="paintType-left">
+                <image class="paintType-left-image" src="{{item.imgUrl}}" />
+            </view>
+            <view class="paintType-right">
+                <view class="paintType-title" data-id="{{item.id}}" data-title="{{item.name}}">{{item.name}}</view>
+                <view class="paintType-author">{{item.author || ''}}</view>
+                <view class="paintType-doubanScore">豆瓣评分：{{item.doubanScore}}</view>
+            </view>
+        </view>
+        <view class="load-more" bindtap="getMoreRecList">
+            <image wx:if="{{isLoading}}" class="is-loading" src="../../assets/loading.gif" />{{loadMore}}
+        </view>
+    </view>
+
+</view>
