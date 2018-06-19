@@ -14,8 +14,8 @@ Page({
         wx.navigateTo({
             url: '../../pages/bookType/bookType?category=' + e.currentTarget.dataset.category + '&type=' + e.currentTarget.dataset.type
         })
+    },
+    onReady: function() {
+        this.setNavigationBarTitleText();
     }
-    //onReady: function() {
-    //    this.setNavigationBarTitleText();
-    //}
 })
