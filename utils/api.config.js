@@ -2,6 +2,7 @@ var base = 'https://www.easy-mock.com/mock/5a39d3d2717d4953ed48bd47/weChatApp/';
 var url = 'https://www.easy-mock.com/mock/5a6a944f396ee930b9c4b8bc/jisihui';
 var officalUrl = 'https://jisihui.com';
 var api = {
+    xmdq:'http://123.207.46.142:8983/solr/mycollection',
     officalUrl: 'https://jisihui.com',
     indexListApi: {
         development: officalUrl + '/app/getIndexInfo'
@@ -19,6 +20,5 @@ var api = {
         development: url + '/bookList/bookList'
     },
 }
-
 
 module.exports = api;

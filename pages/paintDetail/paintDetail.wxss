@@ -33,12 +33,12 @@ page {
 }
 .pic-show-img {
   width: 100%;
-  height: 600rpx;
+  height: 800rpx;
   background: #fff;
   text-align: center;
 }
 .pic-show-img image {
-  height: 800rpx;
+  height: 900rpx;
   width: 600rpx;
 }
 .paintDetail-header-left{

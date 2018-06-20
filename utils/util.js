@@ -47,7 +47,8 @@ var http = (method, url, data, fun, header, auth) => {
 	wx.request({
 		method: method,
 		// url: api[url][development],
-		url: api['officalUrl'] + url,
+		//url: api['officalUrl'] + url,
+    url: api['xmdq'] + url,
 		data: data,
 		header: {
 			'content-type': header || 'application/json', // 默认值

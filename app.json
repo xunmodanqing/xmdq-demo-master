@@ -27,15 +27,15 @@
         "selectedColor": "#202021",
         "borderStyle": "white",
         "list": [{
-            "selectedIconPath": "assets/huajia.png",
-            "iconPath": "assets/huajia.png",
-            "pagePath": "pages/bookCity/bookCity",
-            "text": "作 家"
-        },{
             "selectedIconPath": "assets/huajuan.png",
             "iconPath": "assets/huajuan.png",
             "pagePath": "pages/index/index",
             "text": "画 作"
+        },{
+            "selectedIconPath": "assets/huajia.png",
+            "iconPath": "assets/huajia.png",
+            "pagePath": "pages/bookCity/bookCity",
+            "text": "作 家"
         },{
             "selectedIconPath": "assets/bowuguan.png",
             "iconPath": "assets/bowuguan.png",

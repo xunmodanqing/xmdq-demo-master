@@ -4,7 +4,7 @@
     <view class="market-search-wrapper">
         <view class="market-search-text">
             <text class="market-search-text-text"></text>
-            <input class="market-search-text-input" disabled="isInputDisabled" placeholder-style="color: #cdcdcd" placeholder="搜索"
+            <input class="market-search-text-input" disabled="isInputDisabled" placeholder-style="color: #cdcdcd" placeholder="搜索画作"
             bindtap="goSearchPage"></input>
         </view>
     </view>
