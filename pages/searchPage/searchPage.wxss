@@ -15,7 +15,7 @@ page {
   height: 60rpx;
   line-height: 60rpx;
   padding: 15rpx;
-  background: #cec96f;
+  background: #a5a151;
   position: fixed;
   top: 0;
   left: 0;

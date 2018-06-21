@@ -14,15 +14,15 @@
         "pages/userInfo/userInfo"
     ],
     "window": {
-        "backgroundColor": "#cec96f",
+        "backgroundColor": "#a5a151",
         "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#cec96f",
+        "navigationBarBackgroundColor": "#a5a151",
         "navigationBarTitleText": "",
         "navigationBarTextStyle": "black",
         "enablePullDownRefresh": true
     },
     "tabBar": {
-        "backgroundColor": "#cec96f",
+        "backgroundColor": "#a5a151",
         "color": "#999",
         "selectedColor": "#202021",
         "borderStyle": "white",

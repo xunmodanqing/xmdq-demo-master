@@ -21,7 +21,8 @@ Page({
       var data = {
           fl:'id,title,image_urls',
           fq: "subject_matter:山水",
-          q: 'painting:*'
+          q: 'painting:*',
+          rows:4
       };
       util.http('GET', url, data, (response) => {
         if (response.errMsg) {
@@ -40,7 +41,8 @@ Page({
       var data = {
         fl: 'id,title,image_urls',
         fq: "subject_matter:人物",
-        q: 'painting:*'
+        q: 'painting:*',
+        rows:4
       };
       util.http('GET', url, data, (response) => {
         if (response.errMsg) {
@@ -59,7 +61,8 @@ Page({
       var data = {
         fl: 'id,title,image_urls',
         fq: "subject_matter:花鸟",
-        q: 'painting:*'
+        q: 'painting:*',
+        rows:4
       };
       util.http('GET', url, data, (response) => {
         if (response.errMsg) {
@@ -78,7 +81,8 @@ Page({
       var data = {
         fl: 'id,title,image_urls',
         fq: "subject_matter:其他",
-        q: 'painting:*'
+        q: 'painting:*',
+        rows:4
       };
       util.http('GET', url, data, (response) => {
         if (response.errMsg) {

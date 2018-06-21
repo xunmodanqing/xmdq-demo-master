@@ -10,7 +10,7 @@ page {
   height: 73rpx;
   line-height: 73rpx;
   padding: 5rpx;
-  background: #cec96f;
+  background: #a5a151;
   position: fixed;
   top: 0;
   left: 0;
@@ -390,7 +390,7 @@ page {
   color: #999;
 }
 .market-paint-more{
-  color: #cec96f;
+  color: #a5a151;
   font-size:35rpx;
   /* display: inline-block; */
   float: right;
@@ -410,7 +410,7 @@ page {
   height: 290rpx;
 }
 .market-paint-name{
-  width: 195rpx;
+  width: 300rpx;
   padding: 0 10rpx;
   display: -webkit-box;
   word-break: break-all;
