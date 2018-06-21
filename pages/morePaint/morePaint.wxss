@@ -42,6 +42,9 @@ page {
 .paintType-author{
   margin-bottom: 40rpx;
 }
+.paintType-subject{
+  margin-bottom: 40rpx;
+}
 .paintType-right{
   width: 460rpx;
   height: 290rpx;
@@ -65,7 +68,7 @@ page {
 }
 .paintType-title{
   font-size: 32rpx;
-  color: #ff8862;
+  color: #7c5c29;
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;

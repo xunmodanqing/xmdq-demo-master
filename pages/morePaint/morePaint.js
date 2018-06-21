@@ -13,37 +13,17 @@ Page({
         searchVal: '',
         getOption: {},
         oldListArray: [],
-        num: 1
+        start:10
     },
-    // 获取用户权限
-    /*
-    getSetting: function() {
-        console.log('获取用户权限')
+    getMorePaintList(type, start, flag) {
         var that = this;
-        wx.getSetting({
-            success(res) {
-                if (!res.authSetting['scope.userInfo']) {
-                    wx.authorize({
-                        scope: 'scope.userInfo',
-                        success(res) {
-                            that.login()
-                        },
-                        error() {}
-                    })
-                } else {
-                    that.data.logged ? that.getUserInfo() : that.login();
-                }
-            }
-        })
-    },
-    */
-    getMorePaintList(type, page, flag) {
-        var that = this;
-        var url = '/app/getMore';
+        var url = '/select';
         var data = {
-            type: "GOOD",
-            page: page,
-            pageSize: 10
+            fq: "subject_matter:"+type,
+            q: 'painting:*',
+            start: start,
+            fl:"id,title,image_urls,creation_creator,subject_matter,current_location",
+            rows:10
         };
         util.http('GET', url, data, (response) => {
             if(response.errMsg) {
@@ -51,11 +31,11 @@ Page({
             } else {
                 if(flag){
                     this.setData({
-                        morePaintList: that.data.morePaintList.concat(response.bookList)
+                        morePaintList: that.data.morePaintList.concat(response.response.docs)
                     })
                 }else{
                     that.setData({
-                        morePaintList: response.bookList
+                        morePaintList: response.response.docs
                     })
                 }
             }
@@ -73,11 +53,11 @@ Page({
     },
     getMorePaintTypeList() {
         this.setData({
-            num: (this.data.num) + 1
+            start: (this.data.start) + 10
         })
         this.oldListArray = this.data.morePaintList;
-        var page = (this.data.num);
-        this.getMorePaintList(this.data.getOption.type, page, true);     
+        var start = (this.data.start);
+        this.getMorePaintList(this.data.getOption.type, start, true);     
     },
     // 加载更多
     onReachBottom: function() {
@@ -87,7 +67,8 @@ Page({
     onLoad: function(option){
         this.data.getOption = option;
         this.setNavigationBarTitleText(option);
-        this.getMorePaintList(option.type, '1');
+        this.getMorePaintList(option.type, 10);
+        console.log(option.type)
     },
     onReady: function() {
     }

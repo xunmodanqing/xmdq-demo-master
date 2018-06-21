@@ -3,12 +3,13 @@
     <view class="tab-content">
         <view class="tab-content-paintType" wx:for="{{morePaintList}}" wx:key="{{index}}" wx:item="item" data-id="{{item.id}}" bindtap="goPaintDetail">
             <view class="paintType-left">
-                <image class="paintType-left-image" src="{{item.imgUrl}}" />
+                <image class="paintType-left-image" src="{{item.image_urls}}" />
             </view>
             <view class="paintType-right">
-                <view class="paintType-title" data-id="{{item.id}}" data-title="{{item.name}}">{{item.name}}</view>
-                <view class="paintType-author">{{item.author || ''}}</view>
-                <view class="paintType-doubanScore">豆瓣评分：{{item.doubanScore}}</view>
+                <view class="paintType-title" data-id="{{item.id}}" data-title="{{item.title}}">{{item.title}}</view>
+                <view class="paintType-author">作者：{{item.creation_creator}}</view>
+                <view class="paintType-subject">题材：{{item.subject_matter}}</view>
+                <view class="paintType-location">现馆藏地：{{item.current_location}}</view>
             </view>
         </view>
         <view class="load-more" bindtap="getMoreRecList">

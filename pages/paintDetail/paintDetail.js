@@ -25,7 +25,11 @@ Page({
           zoom: false, //是否缩放状态
           distance: 0,  //两指距离
           scale: 1,  //缩放倍数
-        }
+        },
+        screenWidth: 0,
+        screenHeight: 0,
+        imgwidth: 0,
+        imgheight: 0, 
     },
     show: function (){
         var that = this;
@@ -37,6 +41,27 @@ Page({
         this.setData({
           picshow: false
         })
+    },
+    imageLoad: function (e) {
+      var _this = this;
+      var $width = e.detail.width,    //获取图片真实宽度  
+        $height = e.detail.height;
+      var ratio;  //图片的真实宽高比例  
+      var viewWidth;
+      var viewHeight;
+      if ($height > $width){
+        ratio = $width / $height;
+        viewWidth = 700;         //设置图片显示宽度，  
+        viewHeight = 700 / ratio;    //计算的高度值    
+      }else{
+        ratio = $height / $width;
+        viewHeight=700;
+        viewWidth = 700 / ratio;
+      }
+      this.setData({
+        imgwidth: viewWidth,
+        imgheight: viewHeight
+      })
     },
     touchstartCallback: function (e) {
       //触摸开始
@@ -183,6 +208,15 @@ Page({
             paintId: option.id
         })
         this.getPaintDetail(this.data.paintId);
+        var that=this;
+        wx.getSystemInfo({
+          success: function (res) {
+            that.setData({
+              screenHeight: res.windowHeight,
+              screenWidth: res.windowWidth,
+            });
+          }
+        });
     },
     onReady: function() {
     }

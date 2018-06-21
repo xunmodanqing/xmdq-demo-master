@@ -24,12 +24,12 @@
         <view class="market-paint">
             <view class="market-paint-header">
                 <view class="market-paint-text">山水画</view>
-                <view class="market-paint-more" data-category="山水画" data-type="shanshui" bindtap="goMorePaint">更多>></view>
+                <view class="market-paint-more" data-category="山水画" data-type="山水" bindtap="goMorePaint">更多>></view>
             </view>
             <view class="market-paint-list">
                 <view class="market-paint-item" wx:for="{{ssPaintList}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
-                    <image class="market-paint-img" src="{{item.imgUrl}}" />
-                    <view class="market-paint-name">{{item.name}}</view>
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.title}}</view>
                 </view>
             </view>
         </view>
@@ -37,12 +37,12 @@
         <view class="market-paint">
             <view class="market-paint-header">
                 <view class="market-paint-text">花鸟画</view>
-                <view class="market-paint-more" data-category="花鸟画" data-type="huaniao" bindtap="goMorePaint">更多>></view>
+                <view class="market-paint-more" data-category="花鸟画" data-type="花鸟" bindtap="goMorePaint">更多>></view>
             </view>
             <view class="market-paint-list">
                 <view class="market-paint-item" wx:for="{{hnPaintList}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
-                    <image class="market-paint-img" src="{{item.imgUrl}}" />
-                    <view class="market-paint-name">{{item.name}}</view>
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.title}}</view>
                 </view>
             </view>
         </view>
@@ -50,13 +50,25 @@
         <view class="market-paint">
                 <view class="market-paint-header">
                     <view class="market-paint-text">人物画</view>
-                    <view class="market-paint-more" data-category="人物画" data-type="renwu" bindtap="goMorePaint">更多>></view>
+                    <view class="market-paint-more" data-category="人物画" data-type="人物" bindtap="goMorePaint">更多>></view>
                 </view>
                 <view class="market-paint-list">
                     <view class="market-paint-item" wx:for="{{rwPaintList}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
-                        <image class="market-paint-img" src="{{item.imgUrl}}" />
-                        <view class="market-paint-name">{{item.name}}</view>
+                        <image class="market-paint-img" src="{{item.image_urls}}" />
+                        <view class="market-paint-name">{{item.title}}</view>
                     </view>
                 </view>
             </view>
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">其他</view>
+                <view class="market-paint-more" data-category="其他" data-type="其他" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{othersList}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
     </view>

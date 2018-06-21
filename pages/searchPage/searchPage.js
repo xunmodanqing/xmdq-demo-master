@@ -6,14 +6,16 @@ Page({
         isFocus: true,
         start: 0,
         resultList: [],
-        oldListArray: []
+        oldListArray: [],
+        loadMore: '加载更多',
+        isLoading: false
     },
     doSearch:function(start,flag){
         var that = this;
         if(that.data.searchValue){
             var url = '/select';
             var data = {
-                fl: "id,title,image_urls,creation_creator",
+                fl: "id,title,image_urls,creation_creator,subject_matter,current_location",
                 start:start,
                 rows: 10,
                 q: that.data.searchValue

@@ -7,6 +7,9 @@ page {
   position: relative;
   padding-bottom: 40rpx;
 }
+.set{
+  flex-direction: column;
+}
 .search-page-wrapper{
   width: 750rpx;
   height: 60rpx;
@@ -52,7 +55,7 @@ page {
   max-width: 750rpx;
   background: #F6F6F6;
   font-size: 28rpx;
-  /* margin-top: 190rpx; */
+  margin-top: 190rpx; 
 }
 .tab-content-focus,
 .tab-content-paintResult,
@@ -104,7 +107,7 @@ page {
 }
 .paintResult-title{
   font-size: 32rpx;
-  color: #ff8862;
+  color: #7c5c29;
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
@@ -162,39 +165,17 @@ page {
   height: 150rpx; 
   margin-bottom: 2rpx;
 }
-.hot-index,
-.hot-title{
-   display: inline-block; 
-   vertical-align: top; 
+.paintType-title{
+  font-size: 32rpx;
+  color: #7c5c29;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  margin-bottom: 60rpx;
 }
-.hot-index,
-.hot-title{
-  font-size: 34rpx;
+.paintType-author{
+  margin-bottom: 40rpx;
 }
-.hot-index{
-  width: 50rpx;
-  color: #E6DA7A;
-}
-.hot-index-hot{
-  color: orangered;
-}
-.hot-title{
-  max-width: 470rpx;
-  display: -webkit-inline-box;
-  word-break: break-all;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp:2;
-  line-height: 1.6;
-  margin-right: 20rpx;
-  margin-left: 10rpx;
-} 
-.hot-image{
-  width: 150rpx;
-  height: 100rpx;
-  border-radius: 10rpx;
-}
-.hot-footer-text{
-  margin-left: 60rpx;
+.paintType-subject{
+  margin-bottom: 40rpx;
 }
