@@ -16,16 +16,16 @@
     "pages/museumDetail/museumDetail"
   ],
   "window": {
-    "backgroundColor": "#cec96f",
+    "backgroundColor": "#a5a151",
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#cec96f",
+    "navigationBarBackgroundColor": "#a5a151",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
   "tabBar": {
-    "backgroundColor": "#cec96f",
-    "color": "#999",
+    "backgroundColor": "#a5a151",
+    "color": "#ddd",
     "selectedColor": "#202021",
     "borderStyle": "white",
     "list": [
