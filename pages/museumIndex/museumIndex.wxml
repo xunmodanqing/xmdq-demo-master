@@ -4,7 +4,7 @@
       <input class="search-page-text" type="text" placeholder-style="color: #cdcdcd" placeholder="搜索博物馆" focus="isFocus" bindinput="bindKeyInput" confirm-type="search"></input>
     </view>
     <view class="bookCity-bod-container">
-      <view class="bookCity-body-item bookCity-body-item-{{index%3}}" wx:for="{{museumList}}" wx:key="{{index}}" wx:for-item="museum" data-id="{{museum.id}}">
+      <view class="bookCity-body-item bookCity-body-item-{{index%3}}" wx:for="{{museumList}}" wx:key="{{index}}" wx:for-item="museum" data-id="{{museum.id}}" bindtap="goMuseumDetail">
         <image class="bookCity-item-image" src="{{museum.image_urls}}" alt="" />
         <view class="bookCity-item-text">{{museum.museumName}}</view>
       </view>

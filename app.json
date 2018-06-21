@@ -12,7 +12,8 @@
     "pages/rankList/rankList",
     "pages/searchPage/searchPage",
     "pages/userCenter/userCenter",
-    "pages/userInfo/userInfo"
+    "pages/userInfo/userInfo",
+    "pages/museumDetail/museumDetail"
   ],
   "window": {
     "backgroundColor": "#cec96f",

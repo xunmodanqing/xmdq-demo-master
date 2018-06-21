@@ -25,6 +25,11 @@ Page({
       }
     })
   },
+  goMuseumDetail:function(e){
+    wx.navigateTo({
+      url: '../../pages/museumDetail/museumDetail?id=' + e.currentTarget.dataset.id
+    })
+  },
   bindKeyInput: function(e) {
     var q = '', final = ''
     if (e.detail.value === '' || e.detail.value == undefined){

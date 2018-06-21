@@ -96,7 +96,7 @@ page {
   color: #fff;
 }
 .bookCity-bod-container{
-  margin-top: 60rpx;
+  margin-top: 70rpx;
   display: flex;
   flex-wrap:wrap;
 }
