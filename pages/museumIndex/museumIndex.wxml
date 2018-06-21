@@ -1,0 +1,14 @@
+<view class="main">
+  <view class="bookCity-container">
+    <view class="market-search-text">
+      <text class="market-search-text-text"></text>
+      <input class="market-search-text-input" value="{{searchValue}}" placeholder-style="color: #cdcdcd" placeholder="搜索博物馆"  bindtap="changeMuseum"></input>
+    </view>
+    <view class="bookCity-bod-container">
+      <view class="bookCity-body-item bookCity-body-item-{{index%3}}" wx:for="{{museumList}}" wx:key="{{index}}" wx:for-item="museum" data-id="{{museum.id}}">
+        <image class="bookCity-item-image" src="{{museum.image_urls}}" alt="" />
+        <view class="bookCity-item-text">{{museum.museumName}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,51 +1,57 @@
 {
-    "pages": [
-        "pages/bookCity/bookCity",
-        "pages/bookList/bookList",
-        "pages/bookListDetail/bookListDetail",
-        "pages/bookType/bookType",
-        "pages/index/index",
-        "pages/morePaint/morePaint",
-        "pages/paintDetail/paintDetail",
-        "pages/paintTag/paintTag",
-        "pages/rankList/rankList",
-        "pages/searchPage/searchPage",
-        "pages/userCenter/userCenter",
-        "pages/userInfo/userInfo"
-    ],
-    "window": {
-        "backgroundColor": "#cec96f",
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#cec96f",
-        "navigationBarTitleText": "",
-        "navigationBarTextStyle": "black",
-        "enablePullDownRefresh": true
-    },
-    "tabBar": {
-        "backgroundColor": "#cec96f",
-        "color": "#999",
-        "selectedColor": "#202021",
-        "borderStyle": "white",
-        "list": [{
-            "selectedIconPath": "assets/huajuan.png",
-            "iconPath": "assets/huajuan.png",
-            "pagePath": "pages/index/index",
-            "text": "画 作"
-        },{
-            "selectedIconPath": "assets/huajia.png",
-            "iconPath": "assets/huajia.png",
-            "pagePath": "pages/bookCity/bookCity",
-            "text": "作 家"
-        },{
-            "selectedIconPath": "assets/bowuguan.png",
-            "iconPath": "assets/bowuguan.png",
-            "pagePath": "pages/rankList/rankList",
-            "text": "博物馆"
-        },{
-            "selectedIconPath": "assets/more.png",
-            "iconPath": "assets/more.png",
-            "pagePath": "pages/userCenter/userCenter",
-            "text": "我 的"
-        }]
-    }
+  "pages": [
+    "pages/museumIndex/museumIndex",
+    "pages/bookCity/bookCity",
+    "pages/bookList/bookList",
+    "pages/bookListDetail/bookListDetail",
+    "pages/bookType/bookType",
+    "pages/index/index",
+    "pages/morePaint/morePaint",
+    "pages/paintDetail/paintDetail",
+    "pages/paintTag/paintTag",
+    "pages/rankList/rankList",
+    "pages/searchPage/searchPage",
+    "pages/userCenter/userCenter",
+    "pages/userInfo/userInfo"
+  ],
+  "window": {
+    "backgroundColor": "#cec96f",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#cec96f",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#cec96f",
+    "color": "#999",
+    "selectedColor": "#202021",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "assets/huajuan.png",
+        "iconPath": "assets/huajuan.png",
+        "pagePath": "pages/index/index",
+        "text": "画 作"
+      },
+      {
+        "selectedIconPath": "assets/huajia.png",
+        "iconPath": "assets/huajia.png",
+        "pagePath": "pages/bookCity/bookCity",
+        "text": "作 家"
+      },
+      {
+        "selectedIconPath": "assets/bowuguan.png",
+        "iconPath": "assets/bowuguan.png",
+        "pagePath": "pages/museumIndex/museumIndex",
+        "text": "博物馆"
+      },
+      {
+        "selectedIconPath": "assets/more.png",
+        "iconPath": "assets/more.png",
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "我 的"
+      }
+    ]
+  }
 }
