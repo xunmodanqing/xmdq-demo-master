@@ -7,20 +7,28 @@ page {
   height: 100%;
 }
 /*搜索框的样式  */
- .market-search-text{ 
-  color: #fff;
-  width: 700rpx;
-  font-size: 35rpx;
-  display: inline-block;
-}
-.market-search-text-text{
-  color: #fff;
-}
-.market-search-text-input{
-  background-color: #fff;
-  border-radius: 15rpx;
+.search-page-wrapper{
+  width: 750rpx;
   height: 60rpx;
   line-height: 60rpx;
+  padding: 15rpx;
+  background: #cec96f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  text-align: center;
+}
+.search-page-text{
+  width: 650rpx;
+  font-size: 35rpx;
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  text-align: left;
+  padding-left: 10rpx;
 }
 /*搜索框的样式  */
 
@@ -88,7 +96,7 @@ page {
   color: #fff;
 }
 .bookCity-bod-container{
-  margin-top: 20rpx;
+  margin-top: 60rpx;
   display: flex;
   flex-wrap:wrap;
 }

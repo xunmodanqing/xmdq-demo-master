@@ -1,8 +1,7 @@
 <view class="main">
   <view class="bookCity-container">
-    <view class="market-search-text">
-      <text class="market-search-text-text"></text>
-      <input class="market-search-text-input" value="{{searchValue}}" placeholder-style="color: #cdcdcd" placeholder="搜索博物馆"  bindtap="changeMuseum"></input>
+    <view class="search-page-wrapper">
+      <input class="search-page-text" type="text" placeholder-style="color: #cdcdcd" placeholder="搜索博物馆" focus="isFocus" bindinput="bindKeyInput" confirm-type="search"></input>
     </view>
     <view class="bookCity-bod-container">
       <view class="bookCity-body-item bookCity-body-item-{{index%3}}" wx:for="{{museumList}}" wx:key="{{index}}" wx:for-item="museum" data-id="{{museum.id}}">
