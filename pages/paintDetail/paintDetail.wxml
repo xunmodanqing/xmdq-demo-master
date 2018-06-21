@@ -3,21 +3,21 @@
 </view>
 <view class="paintDetail-header">
     <view class="bookDetail-header-right">
-        <view class="paint-name">{{paintDetail.book.name}}</view>
+        <view class="paint-name">{{paintTitle}}</view>
     </view>
     <view class="paintDetail-header-left">
-        <image class="paintDetail-header-image" src="{{paintDetail.book.imgUrl}}" bindtap="show"/>
+        <image class="paintDetail-header-image" src="{{paintImg}}" bindtap="show"/>
     </view>
 </view>
 <view class="pic-show-hide" hidden="{{!picshow}}">
     <scroll-view class="pic-show-img" bindtouchstart="touchstartCallback"  bindtouchmove="touchmoveCallback" bindtouchend="touchendCallback" scroll-x="true"  scroll-y="true" >
-      <image style="zoom:{{stv.scale}};" src="{{paintDetail.book.imgUrl}}"></image>
+      <image style="zoom:{{stv.scale}};" src="{{paintImg}}"></image>
     </scroll-view>
     <button class="pic-hide" bindtap="hide">返回画作详情</button>
 </view>
 <view class="paintDetail-size" >
     <view class="paintDetail-size-title">画作尺寸</view>
-    <view name="paintsize" class="paint-size">纵38.5cm 横129cm</view>
+    <view name="paintsize" class="paint-size">纵{{paintHeiht}}cm 横{{paintWidth}}cm</view>
 </view>
 
 <view class="paintDetail-tag" wx:if="{{paintTags}}">
@@ -25,10 +25,10 @@
     <view class="paintDetail-tag-type" wx:for="{{paintTags}}" wx:key="{{index}}" wx:item="item" data-tag="{{item}}" bindtap="goPaintTag">{{item}}</view>
 </view>
 
-<view class="paintDetail-content" wx:if="{{paintContent}}">
+<view class="paintDetail-content" wx:if="{{paintDesc}}">
     <view class="paintDetail-content-title">内容赏析</view>
     <view class="paintDetail-content-info {{isShowPartContent ? 'text-overflow' : ''}}">
-        {{paintContent}}
+        {{paintDesc}}
     </view>
     <view wx:if="{{isShowPartContent}}" class="paintDetail-show-all" bindtap="doShowAllContent">展开全文</view>
     <view wx:if="{{!isShowPartContent}}" class="paintDetail-show-all" bindtap="doShowAllContent">收起全文</view>

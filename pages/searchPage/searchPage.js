@@ -54,6 +54,11 @@ Page({
         var start = (this.data.start);
         this.doSearch(start, true);
     },
+    goPaintDetail(e) {
+      wx.navigateTo({
+        url: '../../pages/paintDetail/paintDetail?id=' + e.currentTarget.dataset.id
+      })
+    },
     bindKeyInput: function(e) {
         this.setData({
             searchValue: e.detail.value

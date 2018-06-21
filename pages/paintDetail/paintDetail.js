@@ -8,8 +8,12 @@ Page({
         loadMore: '加载更多',
         isLoading: false,
         paintTags: [],
+        paintTitle: '',
+        paintImg: '',
+        paintHeiht: '',
+        paintWidth: '',
+        paintDesc: '',
         searchVal: '',
-        paintContent:'',
         paintId:'',
         paintStatus: 'DEFAULT',
         showIndex: [],
@@ -109,19 +113,32 @@ Page({
     },
     getPaintDetail: function(id){
         var that = this;
-        var url = '/m/book/' + id;
-        util.http('GET',url, {}, (response) => {
+        var url = '/select';
+        var data = {
+          q: 'id:'+that.data.paintId
+        };
+        util.http('GET',url,data, (response) => {
             if (response.errMsg) {
                 util.showModel(response.errMsg);
             } else {
-                var array = response.book.tags ? (response.book.tags + '').replace(/[\[\]]/g, '').split(', ') : '';
+                var array=new Array();
+                var detail=new Array();
+                var paint = response.response.docs[0];
+                var author=paint.creation_creator;
+                array[0] = paint.creation_date;
+                array[1] = paint.subject_matter;
+                array[2] = paint.material_technique;
+                array[3] = paint.current_location;
+                detail = array.concat(author);
+                console.log(detail);
+                //console.log(paint.creation_creator)
                 that.setData({
-                    paintDetail: response,
-                    paintTags: array,
-                    paintAllContent: response.book.content,
-                    paintContent: response.book.content,
-                    paintPartContent: response.book.content ? response.book.content.substring(0, 100) + '...': '',
-                    bookStatus: response.bookStatus
+                    paintTags:detail,
+                    paintTitle: paint.title,
+                    paintImg: paint.image_urls,
+                    paintHeiht: paint.height,
+                    paintWidth:paint.width,
+                    paintDesc: paint.description
                 })
             }
         })
@@ -161,6 +178,7 @@ Page({
         wx.stopPullDownRefresh();
     },
     onLoad: function(option){
+        console.log(option.id)
         this.setData({
             paintId: option.id
         })
