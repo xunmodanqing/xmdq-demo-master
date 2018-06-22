@@ -1,1 +1,42 @@
-/* pages/museumDetail/museumDetail.wxss */
+page {
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+.museumDetail-headerr{
+  padding: 30rpx;
+  background: #ffffff;
+  margin-bottom: 20rpx;
+}
+.museumDetail-header-center{
+  padding: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+.museumDetail-header-image{
+  width: 850rpx;
+  height: 400rpx;
+}
+.museumDetail-item{
+  background-color: #ffffff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+.museumDetail-item-title{
+  margin-bottom: 20rpx;
+}
+.museumDetail-item-value{
+  color: #af1a58;
+  font-size: 30rpx;
+}
+.museumDetail-otherPage{
+  display: block;
+}
+.museumDetail-url{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  color: #1E8AE8;
+  font-size: 30rpx;
+}
