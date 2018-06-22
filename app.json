@@ -18,7 +18,9 @@
     "pages/painterDetail/painterDetail",
     "pages/painterIndex/painterIndex",
     "pages/painterMore/painterMore",
-    "pages/painterSearch/painterSearch"
+    "pages/painterSearch/painterSearch",
+    "pages/webview/webview",
+    "pages/museumPainting/museumPainting"
   ],
   "window": {
     "backgroundColor": "#a5a151",

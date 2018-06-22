@@ -1,4 +1,6 @@
 // pages/museumDetail/museumDetail.js
+var util = require('../../utils/util.js')
+
 Page({
 
   /**
@@ -6,20 +8,64 @@ Page({
    */
   data: {
     museumID:'',
+    museumInfo:''
   },
-
+  /**
+   * 获取指定博物馆详细信息
+   */
+  getMuseumInfo: function () {
+    var url = '/select';
+    var query = 'id:' + this.data.museumID
+    var data = {
+      q: query
+    };
+    util.http('GET', url, data, (response) => {
+      if (response.errMsg) {
+        util.showModel(response.errMsg);
+      } else {
+        this.setData({
+          museumInfo: response.response.docs[0]
+        })
+        wx.setNavigationBarTitle({
+          title: response.response.docs[0].museumName
+        });
+      }
+    })
+  },
+  /**
+   * 跳转到web浏览器页面
+   */
+  goWebView() {
+    var argv1 = 'url=' + this.data.museumInfo.descriptionURL
+    var argv2 = '&barTitle=' + this.data.museumInfo.museumName
+    wx.navigateTo({
+      url: '../../pages/webview/webview?'+argv1+argv2
+    })
+  },
+  /**
+   * 查看该博物馆馆藏国画
+   */
+  lookPainting(){
+    var argv1 = 'type=' + this.data.museumInfo.museumName;
+    var argv2 = '&category=' + this.data.museumInfo.museumName;
+    wx.navigateTo({
+      url: '../../pages/museumPainting/museumPainting?' + argv1+argv2
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
+    this.setData({
+      museumID: options.id
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.getMuseumInfo();
   },
 
   /**

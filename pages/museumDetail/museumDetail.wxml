@@ -1,2 +1,21 @@
-<!--pages/museumDetail/museumDetail.wxml-->
-<text>pages/museumDetail/museumDetail.wxml</text>
+<view class="museumDetail-header">
+  <view class="museumDetail-header-center">
+    <image class="museumDetail-header-image" src="{{museumInfo.image_urls}}" bindtap="show" />
+  </view>
+</view>
+<view class="museumDetail-item">
+  <view class="museumDetail-item-title">地址:</view>
+  <view class="museumDetail-item-value">{{museumInfo.place}}</view>
+</view>
+<view class="museumDetail-item">
+  <view class="museumDetail-item-title">开放时间:</view>
+  <view class="museumDetail-item-value">{{museumInfo.time}}</view>
+</view>
+<view class="museumDetail-item">
+  <view class="museumDetail-item-title">门票信息:</view>
+  <view class="museumDetail-item-value">{{museumInfo.ticket}}</view>
+</view>
+<view class="museumDetail-otherPage">
+  <view class="museumDetail-url" bindtap="goWebView">查看官网</view>
+  <view class="museumDetail-url" bindtap="lookPainting">查看馆藏国画</view>
+</view>
