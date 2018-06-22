@@ -19,6 +19,8 @@
     "pages/painterIndex/painterIndex",
     "pages/painterMore/painterMore",
     "pages/painterSearch/painterSearch",
+    "pages/webview/webview",
+    "pages/museumPainting/museumPainting",
     "pages/painterWorks/painterWorks"
   ],
   "window": {
