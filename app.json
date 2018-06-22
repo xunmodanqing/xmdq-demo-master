@@ -48,12 +48,6 @@
         "iconPath": "assets/bowuguan.png",
         "pagePath": "pages/museumIndex/museumIndex",
         "text": "博物馆"
-      },
-      {
-        "selectedIconPath": "assets/more.png",
-        "iconPath": "assets/more.png",
-        "pagePath": "pages/map/map",
-        "text": "我 的"
       }
     ]
   }

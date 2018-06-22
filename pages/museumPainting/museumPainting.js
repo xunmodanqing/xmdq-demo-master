@@ -13,7 +13,7 @@ Page({
     searchVal: '',
     getOption: {},
     oldListArray: [],
-    start: 10
+    start: 0
   },
   getMorePaintList(type, start, flag) {
     var that = this;
@@ -24,7 +24,7 @@ Page({
       fl: "id,title,image_urls,creation_creator,subject_matter,current_location",
       rows: 10
     };
-    console.log(data)
+    console.log(start)
     util.http('GET', url, data, (response) => {
       if (response.errMsg) {
         util.showModel(response.errMsg);
@@ -67,7 +67,7 @@ Page({
   onLoad: function (option) {
     this.data.getOption = option;
     this.setNavigationBarTitleText(option);
-    this.getMorePaintList(option.type, 10);
+    this.getMorePaintList(option.type, 0);
     console.log(option.type)
   },
   onReady: function () {
