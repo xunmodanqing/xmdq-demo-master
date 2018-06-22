@@ -98,6 +98,23 @@ page {
 .paintDetail-size-title{
   margin-bottom: 20rpx;
 }
+.paintDetail-size-title-a{
+  margin-bottom: 20rpx;
+  width:45%;
+  text-align: left;
+}
+.paintDetail-size-title-b{
+  margin-bottom: 20rpx;
+  width:45%;
+  text-align: right;
+}
+.paintDetail-size-title-1{
+  margin-bottom: 20rpx;
+  font-size: 50rpx;
+  text-align: center;
+  color: #a5a151;
+  font-weight:90;
+}
 .paint-size{
   color: #af1a58;
   font-size: 30rpx;
@@ -115,7 +132,7 @@ page {
 .paintDetail-content{
   background-color: #ffffff;
   padding: 20rpx;
-  margin-bottom: 100rpx;
+  margin-bottom: 20rpx;
 }
 .paintDetail-content-title{
   margin-bottom: 20rpx;
@@ -160,4 +177,83 @@ page {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp:8;
+}
+.table {
+  border: 5px solid #ffffff;
+  border-right: 10;
+  border-bottom: 0;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.th1 {
+  font-weight: 400;
+  background-color: #ffffff;
+  padding: 1px;
+  border-bottom: 1px solid #ffffff;
+  border-left: 5px solid #ffffff;
+  text-align: right;
+  width: 65px;
+}
+.th3 {
+  font-weight: 400;
+  background-color: #ffffff;
+  padding-left: 13px;
+  border-bottom: 1px solid #ffffff;
+  border-left: 5px solid #ffffff;
+  text-align: left;
+  width: 25%;
+}
+.td3 {
+  color: #af1a58;
+  background-color: #ffffff;
+  font-size: 30rpx;
+  padding: 1px;
+  border-bottom: 1px solid #ffffff;
+  border-right: 10px solid #ffffff;
+  text-align: left;
+  width: 75%;
+}
+.th2 {
+  font-weight: 400;
+  background-color: #ffffff;
+  padding: 1px;
+  border-bottom: 1px solid #ffffff;
+  border-right: 10px solid #ffffff;
+  text-align: right;
+  width: 120px;
+}
+.td1 {
+  color: #af1a58;
+  background-color: #ffffff;
+  font-size: 30rpx;
+  padding: 3px;
+  border-bottom: 1px solid #ffffff;
+  border-right: 10px solid #ffffff;
+  text-align: left;
+  width: 80px;
+}
+.td2 {
+  color: #af1a58;
+  background-color: #ffffff;
+  font-size: 30rpx;
+  padding: 3px;
+  border-bottom: 1px solid #ffffff;
+  text-align: left;
+  width: 150px;
+}
+.paintDetail-show-all-1{
+  color: #1E8AE8;
+  font-size: 30rpx;
+  background-color: #ffffff;
+  padding: 5px;
+  border-bottom: 1px solid #ffffff;
+  border-top: 10px solid #ffffff;
+  border-right: 10px solid #ffffff;
+  text-align: center;
+  width:100%;
 }

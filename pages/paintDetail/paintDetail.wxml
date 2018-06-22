@@ -1,28 +1,42 @@
 <view class="paintDetail-show" >
-    <view class="paintDetail-size-title">画作展示</view>
+    <view class="paintDetail-size-title-1">{{paintTitle}}</view>
 </view>
+
 <view class="paintDetail-header">
-    <view class="bookDetail-header-right">
-        <view class="paint-name">{{paintTitle}}</view>
-    </view>
     <view class="paintDetail-header-left">
         <image class="paintDetail-header-image" src="{{paintImg}}" bindtap="show"/>
     </view>
 </view>
+
 <view class="pic-show-hide" hidden="{{!picshow}}">
     <scroll-view class="pic-show-img" bindtouchstart="touchstartCallback"  bindtouchmove="touchmoveCallback" bindtouchend="touchendCallback" scroll-x="true"  scroll-y="true" >
-      <image style="zoom:{{stv.scale}};width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" src="{{paintImg}}" bindload="imageLoad"></image>
+    <image style="zoom:{{stv.scale}};width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" src="{{paintImg}}" bindload="imageLoad"></image>
     </scroll-view>
     <button class="pic-hide" bindtap="hide">返回画作详情</button>
 </view>
-<view class="paintDetail-size" >
-    <view class="paintDetail-size-title">画作尺寸</view>
-    <view name="paintsize" class="paint-size">纵{{paintHeiht}}cm 横{{paintWidth}}cm</view>
-</view>
 
-<view class="paintDetail-tag" wx:if="{{paintTags}}">
-    <view class="paintDetail-tag-title">画作标签</view>
-    <view class="paintDetail-tag-type" wx:for="{{paintTags}}" wx:key="{{index}}" wx:item="item" data-tag="{{item}}" bindtap="goPaintTag">{{item}}</view>
+<view class="container">
+    <view class="table">
+        <view class="tr">
+            <view class="th1">年代</view>
+            <view class="td1">{{paintDate}}</view>
+            <view class="th2">材质技艺</view>
+            <view class="td2">{{paintTech}}</view>
+        </view>
+        <view class="tr">
+            <view class="th1">主题</view>
+            <view class="td1">{{paintSub}}</view>
+            <view class="th2">现馆藏地</view>
+            <view class="td2">{{paintLocation}}</view>
+        </view>
+        <view class="tr">
+            <view class="th3">画作尺寸</view>
+            <view class="td3">纵{{paintHeiht}}cm 横{{paintWidth}}cm</view>
+        </view>
+        <view class="tr">
+            <view class="paintDetail-show-all-1" bindtap="goBaike">查看更多详细信息...</view>
+        </view>
+    </view>
 </view>
 
 <view class="paintDetail-content" wx:if="{{paintDesc}}">
@@ -33,6 +47,11 @@
     <view wx:if="{{isShowPartContent}}" class="paintDetail-show-all" bindtap="doShowAllContent">展开全文</view>
     <view wx:if="{{!isShowPartContent}}" class="paintDetail-show-all" bindtap="doShowAllContent">收起全文</view>
 </view>
+
+<view class="paintDetail-tag">
+  <button type="primary" size="default" plain="true" bindtap="goWorks"> 查看{{author1}}更多作品 </button>
+</view>
+
 <!--
 <view class="paintDetail-operate">
     <view class="paintDetail-operate-button-collect" wx:if="{{paintStatus == 'DEFAULT'}}" bindtap="doCollect">收藏</view>

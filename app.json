@@ -18,7 +18,8 @@
     "pages/painterDetail/painterDetail",
     "pages/painterIndex/painterIndex",
     "pages/painterMore/painterMore",
-    "pages/painterSearch/painterSearch"
+    "pages/painterSearch/painterSearch",
+    "pages/painterWorks/painterWorks"
   ],
   "window": {
     "backgroundColor": "#a5a151",

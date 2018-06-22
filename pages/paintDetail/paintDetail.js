@@ -10,8 +10,14 @@ Page({
         paintTags: [],
         paintTitle: '',
         paintImg: '',
+        paintLocation: '',
+        paintDate: '',
+        paintTech: '',
+        paintSub: '',
+        author1: '',
         paintHeiht: '',
         paintWidth: '',
+        author: '',        
         paintDesc: '',
         searchVal: '',
         paintId:'',
@@ -151,22 +157,43 @@ Page({
                 var paint = response.response.docs[0];
                 var author=paint.creation_creator;
                 array[0] = paint.creation_date;
-                array[1] = paint.subject_matter;
+                array[1] = paint.creation_date;
                 array[2] = paint.material_technique;
                 array[3] = paint.current_location;
                 detail = array.concat(author);
-                console.log(detail);
+                //console.log(detail);
                 //console.log(paint.creation_creator)
                 that.setData({
                     paintTags:detail,
                     paintTitle: paint.title,
                     paintImg: paint.image_urls,
+                    author1: paint.creation_creator,
+                    paintLocation: paint.current_location,
                     paintHeiht: paint.height,
                     paintWidth:paint.width,
-                    paintDesc: paint.description
+                    paintDesc: paint.description,
+                    paintDate: paint.creation_date,
+                    paintTech: paint.material_technique,
+                    paintSub: paint.subject_matter
                 })
             }
         })
+    },
+    /**
+   * 跳转百科
+   */
+    goBaike() {
+      wx.navigateTo({
+        url: '../../pages/painterBaike/painterBaike?id=' + this.data.paintId
+      })
+    },    
+    /**
+   * 跳转代表作品
+   */
+    goWorks() {
+      wx.navigateTo({
+        url: '../../pages/painterWorks/painterWorks?name=' + this.data.author1
+      })
     },
     getAuthPaintDetail: function(id){
         var that = this;
