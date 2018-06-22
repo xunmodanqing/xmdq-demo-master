@@ -6,15 +6,15 @@
         <view class="paint-name">{{paintTitle}}</view>
     </view>
     <view class="paintDetail-header-left">
-        <image class="paintDetail-header-image" src="{{paintImg}}" bindtap="show"/>
+        <image class="paintDetail-header-image" src="{{paintImg}}" mode="aspectFit" bindtap="pictureTap"/>
     </view>
 </view>
-<view class="pic-show-hide" hidden="{{!picshow}}">
+<!-- <view class="pic-show-hide" hidden="{{!picshow}}">
     <scroll-view class="pic-show-img" bindtouchstart="touchstartCallback"  bindtouchmove="touchmoveCallback" bindtouchend="touchendCallback" scroll-x="true"  scroll-y="true" >
       <image style="zoom:{{stv.scale}};width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" src="{{paintImg}}" bindload="imageLoad"></image>
     </scroll-view>
     <button class="pic-hide" bindtap="hide">返回画作详情</button>
-</view>
+</view> -->
 <view class="paintDetail-size" >
     <view class="paintDetail-size-title">画作尺寸</view>
     <view name="paintsize" class="paint-size">纵{{paintHeiht}}cm 横{{paintWidth}}cm</view>

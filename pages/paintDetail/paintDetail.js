@@ -31,6 +31,14 @@ Page({
         imgwidth: 0,
         imgheight: 0, 
     },
+    pictureTap:function(){
+      var that = this,
+        src = that.data.paintImg;
+      wx.previewImage({
+        current: src,
+        urls: [that.data.paintImg]
+      })
+    },
     show: function (){
         var that = this;
         that.setData({

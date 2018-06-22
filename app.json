@@ -2,17 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/museumIndex/museumIndex",
-    "pages/bookCity/bookCity",
-    "pages/bookList/bookList",
-    "pages/bookListDetail/bookListDetail",
-    "pages/bookType/bookType",
     "pages/morePaint/morePaint",
     "pages/paintDetail/paintDetail",
     "pages/paintTag/paintTag",
-    "pages/rankList/rankList",
     "pages/searchPage/searchPage",
-    "pages/userCenter/userCenter",
-    "pages/userInfo/userInfo",
     "pages/museumDetail/museumDetail",
     "pages/painterBaike/painterBaike",
     "pages/painterDetail/painterDetail",
@@ -20,7 +13,8 @@
     "pages/painterMore/painterMore",
     "pages/painterSearch/painterSearch",
     "pages/webview/webview",
-    "pages/museumPainting/museumPainting"
+    "pages/museumPainting/museumPainting",
+    "pages/map/map"
   ],
   "window": {
     "backgroundColor": "#a5a151",
@@ -57,7 +51,7 @@
       {
         "selectedIconPath": "assets/more.png",
         "iconPath": "assets/more.png",
-        "pagePath": "pages/userCenter/userCenter",
+        "pagePath": "pages/map/map",
         "text": "我 的"
       }
     ]
