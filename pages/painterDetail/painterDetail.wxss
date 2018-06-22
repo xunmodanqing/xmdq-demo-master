@@ -128,10 +128,11 @@ page {
 }
 .paintDetail-show-all-1{
   color: #1E8AE8;
-  font-size: 25rpx;
+  font-size: 30rpx;
   background-color: #ffffff;
-  padding: 1px;
+  padding: 5px;
   border-bottom: 1px solid #ffffff;
+  border-top: 10px solid #ffffff;
   border-right: 10px solid #ffffff;
   text-align: center;
   width:100%;
@@ -178,7 +179,7 @@ page {
   border: 5px solid #ffffff;
   border-right: 10;
   border-bottom: 0;
-  width: 98%;
+  width: 100%;
   margin-bottom: 20rpx;
 }
 .tr {
@@ -193,7 +194,26 @@ page {
   border-bottom: 1px solid #ffffff;
   border-left: 5px solid #ffffff;
   text-align: right;
-  width: 70px;
+  width: 65px;
+}
+.th3 {
+  font-weight: 400;
+  background-color: #ffffff;
+  padding-left: 13px;
+  border-bottom: 1px solid #ffffff;
+  border-left: 5px solid #ffffff;
+  text-align: left;
+  width: 25%;
+}
+.td3 {
+  color: #af1a58;
+  background-color: #ffffff;
+  font-size: 30rpx;
+  padding: 1px;
+  border-bottom: 1px solid #ffffff;
+  border-right: 10px solid #ffffff;
+  text-align: left;
+  width: 75%;
 }
 .th2 {
   font-weight: 400;
@@ -202,7 +222,7 @@ page {
   border-bottom: 1px solid #ffffff;
   border-right: 10px solid #ffffff;
   text-align: right;
-  width: 100px;
+  width: 78px;
 }
 .td1 {
   color: #af1a58;
@@ -212,7 +232,7 @@ page {
   border-bottom: 1px solid #ffffff;
   border-right: 10px solid #ffffff;
   text-align: left;
-  width: 100px;
+  width: 120px;
 }
 .td2 {
   color: #af1a58;

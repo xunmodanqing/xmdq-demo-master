@@ -17,26 +17,28 @@
         <view class="tr">
             <view class="th1">姓名</view>
             <view class="td1">{{painter.authorName}}</view>
-            <view class="th2">年代</view>
-            <view class="td2">{{painter.dynasty}}</view>
+            <view class="th2">字</view>
+            <view class="td2">{{painter.courtesyNames}}</view>
         </view>
         <view class="tr">
-            <view class="th1">字</view>
-            <view class="td1">{{painter.courtesyNames}}</view>
-            <view class="th2">出生地</view>
-            <view class="td2">{{painter.bornPlace}}</view>
-        </view>
-        <view class="tr">
-            <view class="th1">号</view>
-            <view class="td1">{{painter.artNames}}</view>
-            <view class="th2">代表作</view>
-            <view class="td2">{{painter.works}}</view>
+            <view class="th1">年代</view>
+            <view class="td1">{{painter.dynasty}}</view>
+            <view class="th2">号</view>
+            <view class="td2">{{painter.artNames}}</view>
         </view>
         <view class="tr">
             <view class="th1">别名</view>
             <view class="td1">{{painter.alias}}</view>
-            <view class="th2">主要成就</view>
-            <view class="td2">{{painter.achievements}}</view>
+            <view class="th2">出生地</view>
+            <view class="td2">{{painter.bornPlace}}</view>
+        </view>
+        <view class="tr">
+            <view class="th3">主要成就</view>
+            <view class="td3">{{painter.achievements}}</view>
+        </view>
+        <view class="tr">
+            <view class="th3">代表画作</view>
+            <view class="td3">{{painter.works}}</view>
         </view>
         <view class="tr">
             <view class="paintDetail-show-all-1" bindtap="goBaike">查看更多详细信息...</view>
@@ -44,8 +46,12 @@
     </view>
 </view>
 
+<view class="paintDetail-tag">
+  <button type="primary" size="default" plain="true" bindtap="goWorks"> 查看其代表作品 </button>
+</view>
+
 <!-- view class="paintDetail-content" wx:if="{{paintContent}}" -->
-<view class="paintDetail-content">
+<!-- view class="paintDetail-content">
     <view class="paintDetail-content-title">代表作品</view>
     <view class="paintDetail-content-info {{isShowPartContent ? 'text-overflow' : ''}}">
         {{paintContent}}
@@ -65,4 +71,4 @@
         </view>
     </view>
 
-</view>
+</view -->

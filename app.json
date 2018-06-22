@@ -14,7 +14,8 @@
     "pages/painterSearch/painterSearch",
     "pages/webview/webview",
     "pages/museumPainting/museumPainting",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/painterWorks/painterWorks"
   ],
   "window": {
     "backgroundColor": "#a5a151",

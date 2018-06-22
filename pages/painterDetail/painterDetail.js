@@ -12,6 +12,7 @@ Page({
     paintDesc: '',
     searchVal: '',
     paintId: '',
+    painterName: '',
     paintStatus: 'DEFAULT',
     showIndex: [],
     isShowPartContent: true,
@@ -159,6 +160,7 @@ Page({
         //})  
         this.setData({
           paintImg: paint.image_urls,
+          painterName: paint.authorName,
           morePaintList: response.response.docs
         })
       }
@@ -170,6 +172,15 @@ Page({
   goBaike() {
     wx.navigateTo({
       url: '../../pages/painterBaike/painterBaike?id=' + this.data.paintId
+    })
+  },
+
+  /**
+   * 跳转代表作品
+   */
+  goWorks() {
+    wx.navigateTo({
+      url: '../../pages/painterWorks/painterWorks?name=' + this.data.painterName
     })
   },
 
