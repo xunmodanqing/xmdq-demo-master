@@ -13,7 +13,12 @@
     "pages/searchPage/searchPage",
     "pages/userCenter/userCenter",
     "pages/userInfo/userInfo",
-    "pages/museumDetail/museumDetail"
+    "pages/museumDetail/museumDetail",
+    "pages/painterBaike/painterBaike",
+    "pages/painterDetail/painterDetail",
+    "pages/painterIndex/painterIndex",
+    "pages/painterMore/painterMore",
+    "pages/painterSearch/painterSearch"
   ],
   "window": {
     "backgroundColor": "#a5a151",
@@ -38,7 +43,7 @@
       {
         "selectedIconPath": "assets/huajia.png",
         "iconPath": "assets/huajia.png",
-        "pagePath": "pages/bookCity/bookCity",
+        "pagePath": "pages/painterIndex/painterIndex",
         "text": "作 家"
       },
       {

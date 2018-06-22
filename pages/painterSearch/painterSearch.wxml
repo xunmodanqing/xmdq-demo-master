@@ -1,0 +1,30 @@
+<!--pages/painterSearch/painterSearch.wxml-->
+<view class="set">
+<view class="search-page-wrapper">
+    <input class="search-page-text" value="{{searchValue}}" placeholder-style="color: #cdcdcd" placeholder="输入" focus="isFocus"
+        bindinput="bindKeyInput"></input>
+    <view class="search-page-button" bindtap="doSearch">
+        <image class="search-page-button-icon" src="../../assets/search.png" />
+    </view>
+</view>
+<view class="search-page-result">
+
+    <view class="tab-content">
+        <view class="tab-content-paintResult" wx:for="{{resultList}}" wx:key="{{index}}" wx:item="item" data-id="{{item.id}}" bindtap="goPaintDetail">
+            <view class="paintResult-left">
+                <image class="paintResult-left-image" src="{{item.image_urls}}" />
+            </view>
+            <view class="paintResult-right">
+                <view class="paintType-title" data-id="{{item.id}}" data-title="{{item.title}}">{{item.title}}</view>
+                <view class="paintType-author">画家：{{item.authorName}}</view>
+                <view class="paintType-subject">年代：{{item.dynasty}}</view>
+                <view class="paintType-location">出生地：{{item.bornPlace}}</view>
+            </view>
+        </view>
+        <view class="load-more" bindtap="goPaintDetail">
+            <image wx:if="{{isLoading}}" class="is-loading" src="../../assets/loading.gif" />{{loadMore}}
+        </view>
+    </view>
+
+</view>
+</view>

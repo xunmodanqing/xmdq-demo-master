@@ -1,0 +1,127 @@
+<!--pages/painterIndex/painterIndex.wxml-->
+    <!-- 输入框 -->
+    <view class="market-search-wrapper">
+        <view class="market-search-text">
+            <text class="market-search-text-text"></text>
+            <input class="market-search-text-input" disabled="isInputDisabled" placeholder-style="color: #cdcdcd" placeholder="搜索画家"
+            bindtap="goSearchPage"></input>
+        </view>
+    </view>
+    
+    <view class="market-icon">
+        <!-- 轮播图 -->
+        <swiper class="market-swiper-wrapper" circular="true" indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}"><!--是否循环，显示圆点，自动播放， 自动切换，间隔时间-->
+            <block wx:for="{{imgUrls}}" wx:key="{{index}}" wx:item="item">
+                <!--swiper-item只能包含一个节点再多会自动删除-->
+                <swiper-item class="market-swiper">
+                    <view class="market-swiper-item">
+                        <image class="market-swiper-img" src="{{item}}" />
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">清代</view>
+                <view class="market-paint-more" data-category="清代" data-type="清代" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{PaintList1}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.authorName}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">明代</view>
+                <view class="market-paint-more" data-category="明代" data-type="明代" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{PaintList2}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.authorName}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="market-paint">
+                <view class="market-paint-header">
+                    <view class="market-paint-text">宋代</view>
+                    <view class="market-paint-more" data-category="宋代" data-type="宋代" bindtap="goMorePaint">更多>></view>
+                </view>
+                <view class="market-paint-list">
+                    <view class="market-paint-item" wx:for="{{PaintList3}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                        <image class="market-paint-img" src="{{item.image_urls}}" />
+                        <view class="market-paint-name">{{item.authorName}}</view>
+                    </view>
+                </view>
+        </view>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">近现代</view>
+                <view class="market-paint-more" data-category="近现代" data-type="近现代" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{PaintList4}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.authorName}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">元代</view>
+                <view class="market-paint-more" data-category="元代" data-type="元代" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{PaintList5}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.authorName}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">五代十国</view>
+                <view class="market-paint-more" data-category="五代十国" data-type="五代十国" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{PaintList6}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.authorName}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">唐代</view>
+                <view class="market-paint-more" data-category="唐代" data-type="唐代" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{PaintList7}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.authorName}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="market-paint">
+            <view class="market-paint-header">
+                <view class="market-paint-text">金代</view>
+                <view class="market-paint-more" data-category="金代" data-type="金代" bindtap="goMorePaint">更多>></view>
+            </view>
+            <view class="market-paint-list">
+                <view class="market-paint-item" wx:for="{{PaintList8}}" wx:key="{{index}}" wx:item="item" data-item="{{item}}" data-id="{{item.id}}" bindtap="goPaintDetail">
+                    <image class="market-paint-img" src="{{item.image_urls}}" />
+                    <view class="market-paint-name">{{item.authorName}}</view>
+                </view>
+            </view>
+        </view>
+    </view>

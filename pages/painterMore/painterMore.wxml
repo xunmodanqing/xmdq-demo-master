@@ -1,0 +1,16 @@
+<!--pages/painterMore/painterMore.wxml-->
+<view class="main">
+  <view class="bookCity-container">
+    <view class="bookCity-header-wrapper" data-category="全部画家" data-type="-1" bindtap="goBookType">
+            <image class="bookCity-header-image" src="http://o7irw3n51.bkt.clouddn.com/image/bookcity/allBook.png" alt="" />
+            <view class="bookCity-header-text">全部画家</view>
+    </view>
+
+    <view class="bookCity-bod-container">
+      <view class="bookCity-body-item bookCity-body-item-{{index%3}}" wx:for="{{morePaintList}}" wx:key="{{index}}" wx:for-item="painter" data-id="{{painter.id}}" bindtap="goPaintDetail">
+        <image class="bookCity-item-image" src="{{painter.image_urls}}" alt="" />
+        <view class="bookCity-item-text">{{painter.authorName}}</view>
+      </view>
+    </view>
+  </view>
+</view>

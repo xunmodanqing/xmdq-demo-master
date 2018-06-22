@@ -1,0 +1,2 @@
+<!--pages/painterBaike/painterBaike.wxml-->
+<web-view wx:for="{{morePaintList}}" wx:key="{{index}}" wx:for-item="painter" data-id="{{painter.id}}" src="{{painter.descriptionURL}}"></web-view>

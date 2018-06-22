@@ -1,0 +1,68 @@
+<!--pages/painterDetail/painterDetail.wxml-->
+<view class="paintDetail-header">
+    <view class="paintDetail-header-left">
+        <image class="paintDetail-header-image" src="{{paintImg}}" bindtap="show"/>{{image_urls}}
+    </view>
+</view>
+
+<!--view class="pic-show-hide" hidden="{{!picshow}}">
+    <scroll-view class="pic-show-img" bindtouchstart="touchstartCallback"  bindtouchmove="touchmoveCallback" bindtouchend="touchendCallback" scroll-x="true"  scroll-y="true" >
+      <image style="zoom:{{stv.scale}};" src="{{paintImg}}"></image>
+    </scroll-view>
+    <button class="pic-hide" bindtap="hide">返回画作详情</button>
+</view-->
+
+<view class="container">
+    <view class="table" wx:for="{{morePaintList}}" wx:key="{{index}}" wx:for-item="painter" data-id="{{painter.id}}">
+        <view class="tr">
+            <view class="th1">姓名</view>
+            <view class="td1">{{painter.authorName}}</view>
+            <view class="th2">年代</view>
+            <view class="td2">{{painter.dynasty}}</view>
+        </view>
+        <view class="tr">
+            <view class="th1">字</view>
+            <view class="td1">{{painter.courtesyNames}}</view>
+            <view class="th2">出生地</view>
+            <view class="td2">{{painter.bornPlace}}</view>
+        </view>
+        <view class="tr">
+            <view class="th1">号</view>
+            <view class="td1">{{painter.artNames}}</view>
+            <view class="th2">代表作</view>
+            <view class="td2">{{painter.works}}</view>
+        </view>
+        <view class="tr">
+            <view class="th1">别名</view>
+            <view class="td1">{{painter.alias}}</view>
+            <view class="th2">主要成就</view>
+            <view class="td2">{{painter.achievements}}</view>
+        </view>
+        <view class="tr">
+            <view class="paintDetail-show-all-1" bindtap="goBaike">查看更多详细信息...</view>
+        </view>
+    </view>
+</view>
+
+<!-- view class="paintDetail-content" wx:if="{{paintContent}}" -->
+<view class="paintDetail-content">
+    <view class="paintDetail-content-title">代表作品</view>
+    <view class="paintDetail-content-info {{isShowPartContent ? 'text-overflow' : ''}}">
+        {{paintContent}}
+        <view class="bookCity-bod-container">
+          <view class="bookCity-body-item bookCity-body-item-one" bindtap="goBookType">
+            <image class="bookCity-item-image" src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=783a52ee4136acaf4ded9eae1db0e675/0824ab18972bd407862fc22a71899e510eb30978.jpg" alt="" />
+            <view class="bookCity-item-text">乾隆</view>
+          </view>
+          <view class="bookCity-body-item bookCity-body-item-two" bindtap="goBookType">
+            <image class="bookCity-item-image" src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=f00753f5d933c895b2739029b07a1895/377adab44aed2e7374f7a24e8701a18b87d6fab2.jpg" alt="" />
+            <view class="bookCity-item-text">吴伟业</view>
+          </view>
+          <view class="bookCity-body-item bookCity-body-item-three" bindtap="goBookType">
+            <image class="bookCity-item-image" src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95f9c9d808d162d991e36a4e70b6c289/6a600c338744ebf88dbde323dbf9d72a6159a7da.jpg" alt="" />
+            <view class="bookCity-item-text">弘仁</view>
+          </view>
+        </view>
+    </view>
+
+</view>
