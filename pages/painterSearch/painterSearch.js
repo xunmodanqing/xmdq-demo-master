@@ -19,7 +19,9 @@ Page({
         fl: "id,authorName,dynasty,image_urls,bornPlace",
         start: start,
         rows: 10,
-        q: "painter:" + that.data.searchValue
+        defType: "dismax",
+        qf: "authorName^1.5 dynasty alias^1.2 courtesyNames^1.2 artNames^1.2 bornPlace achievements^0.5 works^0.5",
+        q: that.data.searchValue
       };
       util.http('GET', url, data, (response) => {
         if (response.errMsg) {

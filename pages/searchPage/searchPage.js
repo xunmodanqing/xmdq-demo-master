@@ -73,9 +73,10 @@ Page({
     },
     doSearch:function(start,flag,date,sub,m_tech){
         var that = this;
+        var qf = 'title^1.5 creation_date creation_creator subject_matter material_technique current_location description^0.2';//定义查询字段与查询权重
+        var fl = 'id,title,creation_date,creation_creator,subject_matter,material_technique,current_location,image_urls';//定义返回响应返回的字段
         if(that.data.searchValue){
-            var url = "/select?"+"fl=id,title,image_urls,creation_creator,subject_matter,current_location&start=" + start + "&rows=10" + "&q=" + that.data.searchValue + "&fq=creation_date:" + date + "&fq=subject_matter:" + sub + "&fq=material_technique:" + m_tech;
-            console.log(url)
+            var url = "/select?"+"defType=dismax"+"&fl="+fl+"&start=" + start + "&rows=10" + "&q=" + that.data.searchValue + "&fq=creation_date:" + date + "&fq=subject_matter:" + sub + "&fq=material_technique:" + m_tech + "&qf=" + qf;
             var data={};
             util.http('GET', url , data,(response) => {
                 if (response.errMsg) {
