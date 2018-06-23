@@ -31,6 +31,10 @@ page {
   background-color: #a5a151;
   color: #110000;
 }
+.seemore{
+  background-color: #a5a151;
+  color: #110000;
+}
 .pic-show-img {
   width: 100%;
   height: 800rpx;

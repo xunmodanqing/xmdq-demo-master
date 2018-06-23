@@ -7,6 +7,18 @@
         <image class="search-page-button-icon" src="../../assets/search.png" />
     </view>
 </view>
+<view class="filter-sort" >
+    <view class="section-filter">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" range="{{multiArray}}">
+      <button class="filter" size="mini">筛 选</button>
+      </picker>
+    </view>
+    <view class="section-sort">
+      <picker mode="selector" bindchange="bindPickerChange" range="{{sortArray}}">
+      <button class="filter" size="mini">排 序</button>
+      </picker>
+    </view>
+</view>
 <view class="search-page-result">
 
     <view class="tab-content">

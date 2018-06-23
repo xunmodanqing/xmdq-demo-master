@@ -17,6 +17,15 @@ page {
   z-index: 99;
   text-align: center;
 }
+.swiper {
+  margin-top: 73rpx;
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
 .market-search-text{
   color: #fff;
   width: 700rpx;

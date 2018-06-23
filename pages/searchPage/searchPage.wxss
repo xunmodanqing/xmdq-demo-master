@@ -7,6 +7,12 @@ page {
   position: relative;
   padding-bottom: 40rpx;
 }
+.filter-sort{
+  margin-top: 90rpx;
+  display: flex; 
+  flex-direction:row;
+  justify-content: space-around;
+}
 .set{
   flex-direction: column;
 }
@@ -55,7 +61,7 @@ page {
   max-width: 750rpx;
   background: #F6F6F6;
   font-size: 28rpx;
-  margin-top: 190rpx; 
+  margin-top: 0rpx; 
 }
 .tab-content-focus,
 .tab-content-paintResult,
