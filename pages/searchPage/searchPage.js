@@ -7,7 +7,7 @@ Page({
     isFocus: true,
     start: 0,
     resultList: [],
-    highlighting: {},
+    highlighting: [],
     //oldListArray: [],
     loadMore: '加载更多',
     sortArray: ['按朝代排序'],
@@ -74,6 +74,16 @@ Page({
   bindPickerChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
   },
+  merge: function (ob1, ob2) {
+    var result = {};
+    for (var attr in ob1) {
+      result[attr] = ob1[attr];
+    }
+    for (var attr in ob2) {
+      result[attr] = ob2[attr];
+    }
+    return result;
+  },
   doSearch: function(start, flag, date, sub, m_tech) {
     var that = this;
     var qf = 'title^1.5 creation_date creation_creator subject_matter material_technique current_location description^0.2'; //定义查询字段与查询权重
@@ -102,11 +112,13 @@ Page({
         } else {
           if (flag) {
             this.setData({
-              resultList: that.data.resultList.concat(response.response.docs)
+              resultList: that.data.resultList.concat(response.response.docs),
+              highlighting: this.merge(that.data.highlighting,response.highlighting)
             })
           } else {
             that.setData({
-              resultList: response.response.docs
+              resultList: response.response.docs,
+              highlighting: response.highlighting
             })
           }
         }
@@ -114,7 +126,7 @@ Page({
     } else {
       that.setData({
         resultList: [],
-        highlighting: {}
+        highlighting: []
       })
     }
   },

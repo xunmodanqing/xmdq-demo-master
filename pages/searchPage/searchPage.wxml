@@ -27,19 +27,31 @@
         </view>
         <view class="paintResult-right">
           <view class="paintType-title" data-id="{{item.id}}" data-title="{{item.title}}">
-            <rich-text nodes="{{item.title}}"></rich-text>
+            <rich-text wx:if="{{highlighting[item.id].title[0]}}" nodes="{{highlighting[item.id].title[0]}}"></rich-text>
+            <rich-text wx:else nodes="{{item.title}}"></rich-text>
           </view>
           <view class="paintType-item">
             朝代：{{item.creation_date}}
           </view>
           <view class="paintType-item">
-            <rich-text nodes="作者：{{item.creation_creator}}"></rich-text></view>
+            <rich-text wx:if="{{highlighting[item.id].creation_creator[0]}}" nodes="作者：{{highlighting[item.id].creation_creator[0]}}"></rich-text>
+            <rich-text wx:else nodes="作者：{{item.creation_creator}}"></rich-text>
+          </view>
           <view class="paintType-item">
-            <rich-text nodes="题材：{{item.subject_matter}}"></rich-text></view>
+            <!-- <rich-text nodes="题材：{{item.subject_matter}}"></rich-text> -->
+            <rich-text wx:if="{{highlighting[item.id].subject_matter[0]}}" nodes="题材：{{highlighting[item.id].subject_matter[0]}}"></rich-text>
+            <rich-text wx:else nodes="题材：{{item.subject_matter}}"></rich-text>
+          </view>
           <view class="paintType-item">
-            <rich-text nodes="材质技艺：{{item.material_technique}}"></rich-text></view>
+            <!-- <rich-text nodes="材质技艺：{{item.material_technique}}"></rich-text> -->
+            <rich-text wx:if="{{highlighting[item.id].material_technique[0]}}" nodes="材质技艺：{{highlighting[item.id].material_technique[0]}}"></rich-text>
+            <rich-text wx:else nodes="材质技艺：{{item.material_technique}}"></rich-text>
+          </view>
           <view class="paintType-item">
-            <rich-text nodes="现馆藏地：{{item.current_location}}"></rich-text></view>
+            <!-- <rich-text nodes="现馆藏地：{{item.current_location}}"></rich-text> -->
+            <rich-text wx:if="{{highlighting[item.id].current_location[0]}}" nodes="现馆藏地：{{highlighting[item.id].current_location[0]}}"></rich-text>
+            <rich-text wx:else nodes="现馆藏地：{{item.current_location}}"></rich-text>
+          </view>
         </view>
       </view>
       <view class="load-more" bindtap="getMoreRecList">
