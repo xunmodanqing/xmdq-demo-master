@@ -49,14 +49,5 @@
 </view>
 
 <view class="paintDetail-tag">
-  <button type="primary" size="default" plain="true" bindtap="goWorks"> 查看{{author1}}更多作品 </button>
+  <button class="seemore" bindtap="goWorks"> 查看{{author1}}更多作品 </button>
 </view>
-
-<!--
-<view class="paintDetail-operate">
-    <view class="paintDetail-operate-button-collect" wx:if="{{paintStatus == 'DEFAULT'}}" bindtap="doCollect">收藏</view>
-    <view class="paintDetail-operate-button-collect" wx:if="{{paintStatus != 'DEFAULT'}}" bindtap="doCancelCollect">取消收藏</view>
-    <view class="paintDetail-operate-button-push" bindtap="doPush">推送</view>
-</view>
--->
-

@@ -2,10 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/museumIndex/museumIndex",
-    "pages/bookCity/bookCity",
-    "pages/bookList/bookList",
-    "pages/bookListDetail/bookListDetail",
-    "pages/bookType/bookType",
     "pages/morePaint/morePaint",
     "pages/paintDetail/paintDetail",
     "pages/paintTag/paintTag",
