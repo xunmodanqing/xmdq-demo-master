@@ -10,7 +10,9 @@ Page({
     highlighting: [],
     //oldListArray: [],
     loadMore: '加载更多',
-    sortArray: ['按朝代排序'],
+    sort: '',
+    sortArray: ['不排序', '按朝代从远到近排序', '按朝代从近到远排序'], //picker值数组
+    dateSort: ['', 'creation_date asc', 'creation_date desc'],  //picker值相应的发往solr服务排序的值
     multiArray: [
       [' 所有 ',
         ' 战国 ',
@@ -69,10 +71,13 @@ Page({
     console.log(this.data.date)
     console.log(this.data.sub)
     console.log(this.data.m_tech)
-    this.doSearch(start, false, date, sub, m_tech);
+    this.doSearch(start, false, date, sub, m_tech, this.data.sort);
   },
   bindPickerChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      sort: this.data.dateSort[e.detail.value]
+    });
+    this.doSearch(this.data.start, false, this.data.date, this.data.sub, this.data.m_tech, this.data.sort);
   },
   merge: function (ob1, ob2) {
     var result = {};
@@ -84,7 +89,7 @@ Page({
     }
     return result;
   },
-  doSearch: function(start, flag, date, sub, m_tech) {
+  doSearch: function(start, flag, date, sub, m_tech, sort) {
     var that = this;
     var defType = 'dismax'; //开启dismax
     var qf = 'title^1.5 creation_date creation_creator subject_matter material_technique current_location description^0.2'; //定义查询字段与查询权重
@@ -99,7 +104,7 @@ Page({
     var fq2 = 'subject_matter:' + sub; //题材筛选
     var fq3 = 'material_technique:' + m_tech; //材质技艺筛选
     if (that.data.searchValue) {
-      var url = "/select?" + "defType=" + defType + "&qf=" + qf + "&hl=" + hl + "&hl.fl=" + hl_fl + "&hl.simple.pre=" + hl_simple_pre + "&hl.simple.post=" + hl_simple_post + "&fl=" + fl + "&start=" + start + "&rows=" + rows + "&q=" + q + "&fq=" + fq1 + "&fq=" + fq2 + "&fq=" + fq3;
+      var url = "/select?" + "defType=" + defType + "&qf=" + qf + "&hl=" + hl + "&hl.fl=" + hl_fl + "&hl.simple.pre=" + hl_simple_pre + "&hl.simple.post=" + hl_simple_post + "&fl=" + fl + "&start=" + start + "&rows=" + rows + "&q=" + q + "&fq=" + fq1 + "&fq=" + fq2 + "&fq=" + fq3 + "&sort=" + sort;
       var data = {
       };
       util.http('GET', url, data, (response) => {
@@ -132,7 +137,7 @@ Page({
     })
     //this.oldListArray = this.data.resultList;
     var start = (this.data.start);
-    this.doSearch(start, true, this.data.date, this.data.sub, this.data.m_tech);
+    this.doSearch(start, true, this.data.date, this.data.sub, this.data.m_tech, this.data.sort);
   },
   goPaintDetail(e) {
     wx.navigateTo({
@@ -147,7 +152,7 @@ Page({
       m_tech: '*'
     })
     var start = 0;
-    this.doSearch(start, false, this.data.date, this.data.sub, this.data.m_tech);
+    this.doSearch(start, false, this.data.date, this.data.sub, this.data.m_tech, this.data.sort);
   },
   onReachBottom: function() {
     console.log("###################")
