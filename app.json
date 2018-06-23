@@ -14,7 +14,6 @@
     "pages/painterSearch/painterSearch",
     "pages/webview/webview",
     "pages/museumPainting/museumPainting",
-    "pages/map/map",
     "pages/painterWorks/painterWorks"
   ],
   "window": {
@@ -48,12 +47,6 @@
         "iconPath": "assets/bowuguan.png",
         "pagePath": "pages/museumIndex/museumIndex",
         "text": "博物馆"
-      },
-      {
-        "selectedIconPath": "assets/bowuguan.png",
-        "iconPath": "assets/bowuguan.png",
-        "pagePath": "pages/map/map",
-        "text": "地图"
       }
     ]
   }
