@@ -23,13 +23,23 @@
     <view class="tab-content">
       <view class="tab-content-paintResult" wx:for="{{resultList}}" wx:key="{{index}}" wx:item="item" data-id="{{item.id}}" bindtap="goPaintDetail">
         <view class="paintResult-left">
-          <image class="paintResult-left-image" mode="center" src="{{item.image_urls}}" />
+          <image class="paintResult-left-image" mode="aspectFill" src="{{item.image_urls}}" />
         </view>
         <view class="paintResult-right">
-          <view class="paintType-title" data-id="{{item.id}}" data-title="{{item.title}}">{{item.title}}</view>
-          <view class="paintType-author">作者：{{item.creation_creator}}</view>
-          <view class="paintType-subject">题材：{{item.subject_matter}}</view>
-          <view class="paintType-location">现馆藏地：{{item.curren_location}}</view>
+          <view class="paintType-title" data-id="{{item.id}}" data-title="{{item.title}}">
+            <rich-text nodes="{{item.title}}"></rich-text>
+          </view>
+          <view class="paintType-item">
+            朝代：{{item.creation_date}}
+          </view>
+          <view class="paintType-item">
+            <rich-text nodes="作者：{{item.creation_creator}}"></rich-text></view>
+          <view class="paintType-item">
+            <rich-text nodes="题材：{{item.subject_matter}}"></rich-text></view>
+          <view class="paintType-item">
+            <rich-text nodes="材质技艺：{{item.material_technique}}"></rich-text></view>
+          <view class="paintType-item">
+            <rich-text nodes="现馆藏地：{{item.current_location}}"></rich-text></view>
         </view>
       </view>
       <view class="load-more" bindtap="getMoreRecList">
