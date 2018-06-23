@@ -86,25 +86,21 @@ Page({
   },
   doSearch: function(start, flag, date, sub, m_tech) {
     var that = this;
+    var defType = 'dismax'; //开启dismax
     var qf = 'title^1.5 creation_date creation_creator subject_matter material_technique current_location description^0.2'; //定义查询字段与查询权重
-    var flData = 'id,title,creation_date,creation_creator,subject_matter,material_technique,current_location,image_urls'; //定义返回响应返回的字段
+    var hl = 'on'; //开启高亮
+    var hl_fl = 'title,subject_matter,material_technique,creation_creator,current_location'; //允许高亮的字段
+    var hl_simple_pre = '<span style="color: red">'; //高亮的前缀
+    var hl_simple_post = '</span>'; //高亮的后缀
+    var fl = 'id,title,creation_date,creation_creator,subject_matter,material_technique,current_location,image_urls'; //定义返回响应返回的字段
+    var rows = 10; //每次返回的结果数
+    var q = that.data.searchValue; //查询内容
+    var fq1 = 'creation_date:' + date; //日期筛选
+    var fq2 = 'subject_matter:' + sub; //题材筛选
+    var fq3 = 'material_technique:' + m_tech; //材质技艺筛选
     if (that.data.searchValue) {
-      var url = "/select";
-      // +"?defType=dismax"+"&fl="+fl+"&start=" + start + "&rows=10" + "&q=" + that.data.searchValue + "&fq=creation_date:" + date + "&fq=subject_matter:" + sub + "&fq=material_technique:" + m_tech + "&qf=" + qf;
+      var url = "/select?" + "defType=" + defType + "&qf=" + qf + "&hl=" + hl + "&hl.fl=" + hl_fl + "&hl.simple.pre=" + hl_simple_pre + "&hl.simple.post=" + hl_simple_post + "&fl=" + fl + "&start=" + start + "&rows=" + rows + "&q=" + q + "&fq=" + fq1 + "&fq=" + fq2 + "&fq=" + fq3;
       var data = {
-        defType: 'dismax',
-        qf: qf,
-        fl: flData,
-        start: start,
-        rows: 10,
-        q: that.data.searchValue,
-        fq: 'creation_date:' + date,
-        fq: 'subject_matter:' + sub,
-        fq: 'material_technique:' + m_tech,
-        'hl': 'on',
-        'hl.fl': 'title,subject_matter,material_technique,creation_creator,current_location',
-        'hl.simple.pre': '<span style="color: red">',
-        'hl.simple.post': '</span>'
       };
       util.http('GET', url, data, (response) => {
         if (response.errMsg) {
