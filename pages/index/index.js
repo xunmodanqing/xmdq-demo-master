@@ -2,8 +2,12 @@ var util = require('../../utils/util.js')
 
 Page({
     data: {
-        interval: 5000,
-        duration: 500,
+        mainTopic:[
+          { src: '../../assets/xmdq.png' },
+          { src: '../../assets/smhj.jpg' },
+          { src: '../../assets/lsmj.png' },
+          { src: '../../assets/bwg.png' }
+        ],
         pictureList: [],
         adInfo: {},
         //newsList: [],
