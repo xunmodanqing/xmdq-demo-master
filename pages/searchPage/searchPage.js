@@ -7,6 +7,7 @@ Page({
     isFocus: true,
     start: 0,
     resultList: [],
+    resultCount: 0,
     highlighting: [],
     //oldListArray: [],
     loadMore: '加载更多',
@@ -114,12 +115,14 @@ Page({
           if (flag) {
             this.setData({
               resultList: that.data.resultList.concat(response.response.docs),
-              highlighting: this.merge(that.data.highlighting,response.highlighting)
+              highlighting: this.merge(that.data.highlighting,response.highlighting),
+              resultCount:response.response.numFound
             })
           } else {
             that.setData({
               resultList: response.response.docs,
-              highlighting: response.highlighting
+              highlighting: response.highlighting,
+              resultCount: response.response.numFound
             })
           }
         }
@@ -127,7 +130,8 @@ Page({
     } else {
       that.setData({
         resultList: [],
-        highlighting: []
+        highlighting: [],
+        resultCount: 0
       })
     }
   },

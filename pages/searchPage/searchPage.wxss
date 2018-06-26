@@ -182,3 +182,7 @@ page {
 .paintType-item{
   margin-bottom: 10rpx;
 }
+.result-count{
+  font-size: 30rpx;
+  color: #7c5c29;
+}

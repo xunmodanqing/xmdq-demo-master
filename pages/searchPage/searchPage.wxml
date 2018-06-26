@@ -12,6 +12,7 @@
         <button class="filter" size="mini">筛 选</button>
       </picker>
     </view>
+    <view class="result-count">共搜索到：{{resultCount}}条国画信息</view>
     <view class="section-sort">
       <picker mode="selector" bindchange="bindPickerChange" range="{{sortArray}}">
         <button class="filter" size="mini">排 序</button>
