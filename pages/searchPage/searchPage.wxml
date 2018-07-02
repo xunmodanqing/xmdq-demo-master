@@ -1,11 +1,16 @@
 <!-- 输入框 -->
 <view class="set">
   <view class="search-page-wrapper">
-    <input class="search-page-text" value="{{searchValue}}" placeholder-style="color: #cdcdcd" placeholder="输入" focus="isFocus" bindinput="bindKeyInput"></input>
+    <input class="search-page-text" value="{{inputValue}}" placeholder-style="color: #cdcdcd" placeholder="输入" focus="isFocus" bindinput="goSuggest"></input>
     <view class="search-page-button" bindtap="doSearch">
-      <image class="search-page-button-icon" src="../../assets/search.png" />
+      <image class="search-page-button-icon" src="../../assets/search.png"/>
     </view>
   </view>
+  <scroll-view scroll-y="true" class="scrollview" hidden="{{flag}}" >
+    <view wx:for="{{bindSource}}">
+      <view id="{{item}}" bindtap="bindKeyInput" class="itemview" data-id="{{item.suggestion}}">{{item.suggestion}}</view>
+    </view>
+  </scroll-view>
   <view class="filter-sort">
     <view class="section-filter">
       <picker mode="multiSelector" bindchange="bindMultiPickerChange" range="{{multiArray}}">
@@ -21,7 +26,7 @@
   </view>
   <view class="search-page-result">
 
-    <view class="tab-content">
+    <view class="tab-content" hidden="{{!flag}}">
       <view class="tab-content-paintResult" wx:for="{{resultList}}" wx:key="{{index}}" wx:item="item" data-id="{{item.id}}" bindtap="goPaintDetail">
         <view class="paintResult-left">
           <image class="paintResult-left-image" mode="aspectFill" src="{{item.image_urls}}" />

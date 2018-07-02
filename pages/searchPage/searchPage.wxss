@@ -51,7 +51,7 @@ page {
   width: 40rpx;
   height: 40rpx;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
 }
 .search-page-result{
   padding-top: 90rpx;
@@ -185,4 +185,30 @@ page {
 .result-count{
   font-size: 30rpx;
   color: #7c5c29;
+}
+.scrollview-1 {
+  height: 150%;
+  position: absolute;
+  top: 80px;
+  background: #F6F6F6;
+  overflow: hidden;
+}
+.scrollview {
+  max-width: 750rpx;
+  height: 390rpx;
+  padding: 2rpx;
+  position: fixed;
+  top: 80px;
+  background: #fff;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  box-shadow: 0rpx 0rpx 6rpx 6rpx #cccccc;
+}
+
+.itemview {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 20rpx 20rpx 20rpx 20rpx;
+  border-bottom: 1px solid #b1b1b1;
 }

@@ -3,6 +3,11 @@ var app = getApp();
 
 Page({
   data: {
+    inputValue: '',//点击结果项之后替换到文本框的值
+    flag: true,
+    adapterSource: ["清明上河图"],//本地匹配源
+    bindSource: [],//绑定到页面的数据，根据用户输入动态变化
+
     searchValue: '',
     isFocus: true,
     start: 0,
@@ -150,13 +155,69 @@ Page({
   },
   bindKeyInput: function(e) {
     this.setData({
-      searchValue: e.detail.value,
+      flag: true,
+      inputValue: e.currentTarget.dataset.id,
+      bindSource: [],
+      searchValue: e.currentTarget.dataset.id,
       date: '*',
       sub: '*',
       m_tech: '*'
     })
     var start = 0;
     this.doSearch(start, false, this.data.date, this.data.sub, this.data.m_tech, this.data.sort);
+  },
+  goSuggest:function(e) {
+    var prefix = e.detail.value//用户实时输入值
+    var newSource = []//匹配的结果
+    if (prefix != "") {
+
+      var that = this;
+      if (prefix != "") {
+        var url = '/select';
+        var data = {
+          fl: "suggestion",
+          rows: 5,
+          q: prefix
+        };
+        util.http('GET', url, data, (response) => {
+          if (response.errMsg) {
+            util.showModel(response.errMsg);
+          } else {
+              that.setData({
+                flag: false,
+                adapterSource: response.response.docs
+              })
+              that.setData({
+                adapterSource: response.response.docs,
+              })
+              //console.log(that.data.adapterSource)
+              this.setData({
+                bindSource: that.data.adapterSource
+              })
+              //console.log("--------")
+              console.log(that.data.bindSource)
+          }
+        })
+      } else {
+        that.setData({
+          adapterSource: []
+        })
+      }
+
+      //this.data.adapterSource.forEach(function (e) {
+          //newSource.push(e)
+      //})
+    }
+    //if (this.data.adapterSource.length != 0) {
+      //console.log("------------------------------------")
+      //this.setData({
+        //bindSource: adapterSource
+      //})
+    //} else {
+      //this.setData({
+        //bindSource: []
+      //})
+    //}
   },
   onReachBottom: function() {
     console.log("###################")
